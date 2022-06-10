@@ -1,23 +1,20 @@
 const Sequelize = require('sequelize');
 
-module.exports = class Post extends Sequelize.Model {
+module.exports = class Company extends Sequelize.Model {
   static init(sequelize) {
     return super.init(
       {
-        positions: {
+        corp: {
           type: Sequelize.STRING(50),
           allowNull: false,
+          unique: true,
         },
-        money: {
-          type: Sequelize.INTEGER,
+        country: {
+          type: Sequelize.STRING(30),
           allowNull: false,
         },
-        content: {
-          type: Sequelize.STRING(100),
-          allowNull: false,
-        },
-        skill: {
-          type: Sequelize.STRING(10),
+        area: {
+          type: Sequelize.STRING(30),
           allowNull: false,
         },
       },
@@ -26,8 +23,8 @@ module.exports = class Post extends Sequelize.Model {
         timestamps: false,
         paranoid: false,
         underscored: false,
-        modelName: 'Post',
-        tableName: 'posts',
+        modelName: 'Company',
+        tableName: 'companys',
         charset: 'utf8',
         collate: 'utf8_general_ci',
       }
@@ -35,6 +32,6 @@ module.exports = class Post extends Sequelize.Model {
   }
 
   static associate(db) {
-    db.Post.belongsTo(db.Company, { foreignKey: 'compId' });
+    db.Company.hasMany(db.Post, { foreignKey: 'compId' });
   }
 };
