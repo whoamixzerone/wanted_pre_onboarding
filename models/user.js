@@ -12,6 +12,10 @@ module.exports = class User extends Sequelize.Model {
           type: Sequelize.STRING(50),
           allowNull: false,
         },
+        password: {
+          type: Sequelize.STRING(100),
+          allowNull: false,
+        },
       },
       {
         sequelize,
@@ -26,5 +30,10 @@ module.exports = class User extends Sequelize.Model {
     );
   }
 
-  static associate(db) {}
+  static associate(db) {
+    db.User.hasOne(db.Support, {
+      foreignKey: 'userId',
+      sourceKey: 'id',
+    });
+  }
 };
