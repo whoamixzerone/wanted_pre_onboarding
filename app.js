@@ -1,8 +1,11 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const nunjucks = require('nunjucks');
 
 const { sequelize } = require('./models');
+const postRouter = require('./routes/post');
+
 const app = express();
 
 app.set('port', process.env.PORT || 3000);
@@ -24,6 +27,9 @@ sequelize
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
+app.use('/posts', postRouter);
 
 app.use((req, res, next) => {
   const error = new Error(`${req.method} ${req.url} not found routes`);
