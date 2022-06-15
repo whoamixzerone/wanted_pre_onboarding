@@ -28,6 +28,7 @@
 - 채용공고 삭제
 - 채용공고 목록 조회(전체)
 - 채용공고 목록 조회(검색)
+  - 회사명, 채용포지션, 사용기술에서 일치하는 단어 전체 검색
 - 채용공고 상세 페이지(조회)
   - "채용내용"이 추가적으로 담겨있음
   - 해당 회사가 올린 다른 채용공고가 추가적으로 포함
@@ -37,3 +38,5 @@
 # 📁 API 설계
 
 👉 [Click API 설계](https://github.com/whoamixzerone/wanted_pre_onboarding/wiki)
+
+👉 [Click Postman REST API](https://documenter.getpostman.com/view/21399959/Uz5MFu1u)
