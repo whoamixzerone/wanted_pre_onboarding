@@ -40,3 +40,6 @@
 👉 [Click API 설계](https://github.com/whoamixzerone/wanted_pre_onboarding/wiki)
 
 👉 [Click Postman REST API](https://documenter.getpostman.com/view/21399959/Uz5MFu1u)
+
+# 🗄 DB 설계
+![스크린샷, 2022-06-15 15-29-26](https://user-images.githubusercontent.com/67082984/173758141-014b32f5-a66c-48c6-bc22-d6d057656df2.png)
